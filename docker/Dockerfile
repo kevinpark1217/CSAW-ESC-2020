@@ -26,8 +26,8 @@ RUN ./setup-qemu.sh
 # COPY setup-busybox.sh . 
 # RUN ./setup-busybox.sh
 
+COPY qual-esc2020.elf ./
 COPY start_* ./
-COPY qual-esc2020.elf .
 RUN chmod +x start_*
 EXPOSE 1234 4444
 CMD ["./start_nc.sh"]

@@ -1,6 +1,8 @@
 #!/bin/bash
 
 cd riscv32-linux/busybox
+TOOLCHAIN_TYPE="riscv32-unknown-linux-gnu"
 
-CROSS_COMPILE=riscv32-buildroot-linux-gnu- make defconfig
-CROSS_COMPILE=riscv32-buildroot-linux-gnu- make -j $(nproc)
+# Setup & Compile busybox
+CROSS_COMPILE=$TOOLCHAIN_TYPE- make defconfig
+CROSS_COMPILE=$TOOLCHAIN_TYPE- make -j $(nproc)
