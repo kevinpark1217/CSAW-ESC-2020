@@ -1,4 +1,4 @@
-FROM amd64/ubuntu:18.04
+FROM amd64/ubuntu:20.04
 
 WORKDIR /chal
 
@@ -29,5 +29,7 @@ RUN ./setup-qemu.sh
 COPY qual-esc2020.elf ./
 COPY start_* ./
 RUN chmod +x start_*
+RUN apt install -y netcat-traditional
+
 EXPOSE 1234 4444
 CMD ["./start_nc.sh"]
