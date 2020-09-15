@@ -29,7 +29,7 @@ $ nc localhost 4444
 ```
 Interface with the challenge `gdbserver` over port `1234`.
 ```bash
-$ gdb ./docker/
+$ gdb ./docker/qual-esc2020.elf
 (gdb) target remote localhost:1234
 
 ```
