@@ -29,7 +29,8 @@ $ nc localhost 4444
 ```
 Interface with the challenge `gdbserver` over port `1234`.
 ```bash
-$ gdb ./docker/qual-esc2020.elf
+$ ./riscv-toolchain.sh  # Download RISCV toolchain which includes gdb
+$ ./riscv/bin/gdb ./docker/qual-esc2020.elf
 (gdb) target remote localhost:1234
 
 ```
