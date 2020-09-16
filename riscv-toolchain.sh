@@ -2,7 +2,9 @@
 
 #### Precompiled Toolchain ####
 VERSION="v20200908"
-TYPE="riscv32-glibc-nightly"
+TYPE="riscv64-glibc-nightly"
+
+rm -rf riscv/
 
 #### Prebuilt Toolchain - kevinpark1217 ####
 curl https://github.com/kevinpark1217/riscv-gnu-toolchain/releases/download/$VERSION/$TYPE.zip \
@@ -12,7 +14,7 @@ tar -xvf riscv.tar.gz
 rm riscv.tar.gz $TYPE.zip
 
 # Setup symlinks
-PREFIX="riscv32-unknown-linux-gnu-"
+PREFIX="riscv64-unknown-linux-gnu-"
 PREFIX_SIZE=${#PREFIX}
 cd riscv/bin
 for FILE in $PREFIX*; do
