@@ -1,6 +1,7 @@
 # Challenge 3 Writeup
 
-Solved by Kevin Park
+Solved by **Kevin Park**  
+Writeup by **Kevin Park**  
 
 ## Decompiled `challenge_3` Function
 ![Image of decompiled challenge_3 function](./challenge_3.png)
