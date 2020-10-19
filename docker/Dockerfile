@@ -1,4 +1,4 @@
-FROM amd64/ubuntu:20.04
+FROM amd64/ubuntu:18.04
 
 WORKDIR /chal
 
@@ -17,6 +17,7 @@ ENV PATH="${PATH}:/opt/riscv/bin"
 # Build QEMU with the RISC-V target
 COPY setup-qemu.sh . 
 RUN ./setup-qemu.sh
+ENV PATH="${PATH}:/opt/riscv-qemu/bin"
 
 # Build Linux for the RISC-V target
 # COPY setup-linux.sh . 
@@ -26,10 +27,11 @@ RUN ./setup-qemu.sh
 # COPY setup-busybox.sh . 
 # RUN ./setup-busybox.sh
 
-COPY qual-esc2020.elf ./
+RUN apt install -y netcat-traditional
+
+COPY challenges/ ./
 COPY start_* ./
 RUN chmod +x start_*
-RUN apt install -y netcat-traditional
 
 EXPOSE 1234 4444
 CMD ["./start_nc.sh"]

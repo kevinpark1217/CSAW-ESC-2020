@@ -11,7 +11,7 @@ GIT_OPTIONS="--progress --verbose --depth 1"
 QEMU_TAG="v5.0.0"
 LINUX_TAG="v5.4"
 
-git clone $GIT_OPTIONS --branch $QEMU_TAG https://github.com/qemu/qemu
+# git clone $GIT_OPTIONS --branch $QEMU_TAG https://github.com/qemu/qemu
 
 #### NOT NEEDED ####
 # git clone $GIT_OPTIONS --branch $LINUX_TAG https://github.com/torvalds/linux
